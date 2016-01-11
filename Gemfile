@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 
 gem 'factory_girl_rails'
 
+gem 'httparty'
+
 
 
 group :development, :test do

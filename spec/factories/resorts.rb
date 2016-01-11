@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :resort do
-    name "MyString"
-    location "MyString"
+    name "Eldora"
+    location "37.8846276,-107.6657078"
     station "MyString"
     base 1
     temp 1.5

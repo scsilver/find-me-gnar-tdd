@@ -1,0 +1,36 @@
+<table class="table" style="padding-left: 10%; padding-right: 10%;"">
+  <thead>
+    <th>Name</th>
+    <th>Distance</th>
+    <th>Temperature</th>
+    <th>Base (in)</th>
+    <th>24 hour Snowfall (in)</th>
+    <th>Webcam</th>
+  </thead>
+  <tbody>
+    <%- @resorts.each do |resort| %>
+    <tr>
+      <td><%= resort.name %></td>
+      <td><%= resort.distance_text %></td>
+      <td><%= resort.temp  %>
+        F&deg;</td>
+      <td><%= resort.base  %>
+        in</td>
+      <td><%= resort.snowfall_24hr  %>
+        in</td>
+
+      <td><%- resort.webcam.split(",").each_with_index do |webc, i| %>
+        <a data-featherlight="image" href="<%= webc %>">Camera:
+          <%=i+1%></a>
+        <br>
+        <%- end %>
+      </td>
+    </tf>
+  </tr>
+
+  <%- end %>
+</tbody>
+<script src="//code.jquery.com/jquery-latest.js"></script>
+<script charset="utf-8" src="//cdn.rawgit.com/noelboss/featherlight/master/release/featherlight.min.js" type="text/javascript"></script>
+
+</table>
