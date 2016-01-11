@@ -21,7 +21,7 @@ gem 'instagram'
 
 gem 'twitter'
 
-
+gem 'pry'
 
 
 group :development, :test do

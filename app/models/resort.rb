@@ -1,8 +1,9 @@
 class Resort < ActiveRecord::Base
+  has_many :tweets
   attr_accessor :distance_text, :distance_value
-  
+
   def self.sort_by_distance(resorts)
-      resorts.sort_by &:distance_value
+      resorts = resorts.sort_by &:distance_value
   end
 
   def add_distance(json)

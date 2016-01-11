@@ -1,0 +1,6 @@
+<%= @resort.name %>
+<div class="resort_tweets">
+<% @tweets.each do |tweet| %>
+  <%= tweet.content %>
+<% end %>
+</div>

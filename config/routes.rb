@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
     root 'resorts#index'
     resources :directions
+    resources :tweets
+    resources :resorts
+    match 'tweets/query' => 'tweets#query', :as => :tweets_query, via: [:get, :post]
   # Exampl e of regular route:
   #   get 'products/:id' => 'catalog#view'
   # Example of named route that can be invoked with purchase_url(id: product.id)

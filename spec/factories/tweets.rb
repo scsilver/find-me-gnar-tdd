@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :tweet do
     user "MyString"
-    content "MyString"
+    content "My Tweet"
     time "MyString"
-    resort 1
+    resort nil
   end
 
 end

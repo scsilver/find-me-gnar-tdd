@@ -12,8 +12,7 @@ class DirectionsController < ApplicationController
   end
   def show
     resorts = Geolocator.new(@direction.from).distance
-    resorts = Resort.sort_by_distance(resorts)
-    @resorts = @direction.sorted_resorts
+    @resorts = Resort.sort_by_distance(resorts)
   end
   private
 

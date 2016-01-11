@@ -3,8 +3,11 @@ require 'rails_helper'
 feature 'geolocator' do
   feature 'can find closest resorts' do
     background do
+      resort2 = create(:resort, name: "aresort 2",location: "37.8846276,-108.6657078")
+
       resort = create :resort
-      resort2 = create(:resort, name: "resort 2",location: "37.8846276,-108.6657078")
+
+      tweet = create(:tweet, resort_id: resort.id)
       visit '/'
       click_link 'Closest Mountains'
       fill_in 'Location', with: '715 Arapahoe Ave, Boulder Colorado'
@@ -14,7 +17,7 @@ feature 'geolocator' do
     scenario 'can display closest resorts' do
 
       expect(page).to have_content('Eldora')
-      expect(page.body.index('Eldora')).to be < page.body.index('resort 2')
+      expect(page.body.index('Eldora')).to be < page.body.index('aresort 2')
 
     end
 
@@ -37,7 +40,7 @@ feature 'geolocator' do
     scenario 'can click on closest resorts and show current stats' do
       click_link 'Eldora'
 
-      expect(page).to hav_css('googe/bing map image')
+      expect(page).to hav_css('stats')
 
     end
 
@@ -51,7 +54,7 @@ feature 'geolocator' do
     scenario 'can click on closest resorts and show tweets' do
       click_link 'Eldora'
 
-      expect(page).to hav_css('tweets')
+      expect(page).to have_content('My Tweet')
 
     end
 
