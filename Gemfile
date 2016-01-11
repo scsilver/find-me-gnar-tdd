@@ -17,6 +17,11 @@ gem 'factory_girl_rails'
 
 gem 'httparty'
 
+gem 'instagram'
+
+gem 'twitter'
+
+
 
 
 group :development, :test do
