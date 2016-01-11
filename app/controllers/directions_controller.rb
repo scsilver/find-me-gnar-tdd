@@ -1,4 +1,5 @@
 class DirectionsController < ApplicationController
+  before_action :set_direction, only: [:show]
   def new
     @direction = Direction.new
   end
@@ -10,15 +11,15 @@ class DirectionsController < ApplicationController
     end
   end
   def show
-    @direction = Direction.find(params[:id])
-    geo = Geolocator.new(@direction.from)
-    geo.json
-    resorts = geo.distance
+    resorts = Geolocator.new(@direction.from).distance
     resorts = Resort.sort_by_distance(resorts)
     @resorts = @direction.sorted_resorts
-
   end
   private
+
+  def set_direction
+    @direction = Direction.find(params[:id])
+  end
 
   def direction_params
     params.require(:direction).permit(:from)
