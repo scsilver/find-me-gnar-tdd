@@ -23,6 +23,11 @@ gem 'twitter'
 
 gem 'pry'
 
+gem 'simplecov', :require => false, :group => :test
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.0'
+end
 
 group :development, :test do
   gem 'rspec-rails'

@@ -2,7 +2,8 @@ require 'rails_helper'
 require 'spec_helper'
 
 
-describe 'Geolocator' do
+describe Geolocator do
+
   context 'locate' do
     before(:example) do
       resort = create :resort

@@ -26,8 +26,39 @@ require 'capybara/rails'
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
-ActiveRecord::Migration.maintain_test_schema!
+RSpec::Matchers.define :have_attr_accessor do |field|
+  match do |object_instance|
+    object_instance.respond_to?(field) &&
+      object_instance.respond_to?("#{field}=")
+  end
 
+  failure_message do |object_instance|
+    "expected attr_accessor for #{field} on #{object_instance}"
+  end
+
+  failure_message_when_negated do |object_instance|
+    "expected attr_accessor for #{field} not to be defined on #{object_instance}"
+  end
+
+  description do
+    "checks to see if there is an attr accessor on the supplied object"
+  end
+end
+ActiveRecord::Migration.maintain_test_schema!
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    # Choose a test framework:
+    with.test_framework :rspec
+
+
+    # Choose one or more libraries:
+    with.library :active_record
+    with.library :active_model
+    with.library :action_controller
+    # Or, choose the following (which implies all of the above):
+    with.library :rails
+  end
+end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

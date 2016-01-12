@@ -3,8 +3,5 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
   end
 
-  private
-  def ride_params
-    params.permit(:id)
-  end
+  
 end

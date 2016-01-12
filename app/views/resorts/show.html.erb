@@ -16,6 +16,16 @@
 <% end %>
 </div>
 
+<<form id="tagsearch">
+  <p>
+    <label for="tag">Hashtag:</label>
+    <input type="text" id="tag" name="tag" placeholder="<%=@resort.location%>" required pattern="[a-zA-Z0-9]+" />
+    <input type="submit" value="Search" />
+  </p>
+</form>
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,6 +33,21 @@
     <meta charset="utf-8">
     <title>Displaying text directions with <code>setPanel()</code></title>
     <style>
+    body {
+    font: 75% "Helvetica Neue", sans-serif;
+    color: #333;
+    }
+    input {
+        font-size: 100%;
+    }
+    input[type="text"] {
+        border: 1px solid #ccc;
+        padding: 4px 8px;
+    }
+    img {
+        display: block;
+        float: left;
+    }
       html, body {
         height: 100%;
         margin: 0;
@@ -101,6 +126,55 @@
     <div id="floating-panel"></div>
     <div id="right-panel"></div>
     <div id="map"></div>
+
+    <script>
+    var access_token = "16384709.6ac06b4.49b97800d7fd4ac799a2c889f50f2587",
+        access_parameters = {
+            access_token: access_token
+        };
+
+    var form = $('#tagsearch');
+    form.on('submit', function(ev) {
+        var q = this.tag.value;
+        if(q.length) {
+            //console.log(q);
+            grabImages(q, 40, access_parameters);
+        }
+        ev.preventDefault();
+    });
+
+    function grabImages(tag, count, access_parameters) {
+          var loc = '<%=@resort.location%>'
+          var lat = loc.split(',')[0];
+          var log = loc.split(',')[1];
+          var latlog = 'lat='+lat+"&lng="+log;
+        var instagramUrl = 'https://api.instagram.com/v1/media/search?'+ latlog +'&distance=10000&callback=?&count=' + count;
+        $.getJSON(instagramUrl, access_parameters, onDataLoaded);
+
+    }
+
+    function onDataLoaded(instagram_data) {
+        var instagram = $("#instagram");
+        if (instagram_data.meta.code == 200) {
+            var photos = instagram_data.data;
+            if (photos.length > 0) {
+                instagram.empty();
+                for (var key in photos) {
+                    var photo = photos[key];
+                    instagram.append('<a href="' + photo.link + '"><img src="' + photo.images.thumbnail.url + '"></a>')
+                }
+            } else {
+                instagram.html("nothing found");
+            }
+        } else {
+            var error = instagram_data.meta.error_message;
+            instagram.html(error);
+        }
+    }
+
+    grabImages('unicorn', 40, access_parameters);
+    </script>
+
     <script>
 
 function initMap() {
@@ -127,19 +201,29 @@ function initMap() {
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var start_point;
   var end_point;
-
   directionsService.route({
     origin: '<%=@direction.from%>',
-    destination:'<%=@resort.location%>',
+    destination: '<%=@resort.location%>',
     travelMode: google.maps.TravelMode.DRIVING
   }, function(response, status) {
     if (status === google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
+      debugger;
     } else {
       window.alert('Directions request failed due to ' + status);
     }
   });
+
 }
+//$.ajax({
+//  type: "GET",
+//  url: "https://api.instagram.com/v1/media/search?lat=48.858844&lng=2.294351&access_token=e868ca13f4a846e99c07f3a79d4ef8c4",
+//  dataType: "json",
+//  async: false,
+//  success: function(data) {
+//    start_point = data.location;
+//  }
+//});
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb3ZSbRxq6PQSsJmpTT9bR79HghrI9_LE&signed_in=true&callback=initMap"

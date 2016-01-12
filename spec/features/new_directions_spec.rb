@@ -33,7 +33,7 @@ feature 'geolocator' do
 
       click_link 'Eldora'
 
-      expect(page).to hav_css('relevent road cams')
+      expect(page).to have_css('relevent road cams')
 
     end
 
@@ -48,7 +48,7 @@ feature 'geolocator' do
     scenario 'can click on closest resorts and show instagram photos' do
       click_link 'Eldora'
 
-      expect(page).to hav_css('instagram feed')
+      expect(page).to have_css("img[src*='scontent']")
 
     end
 
