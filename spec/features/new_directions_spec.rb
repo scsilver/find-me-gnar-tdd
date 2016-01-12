@@ -38,9 +38,10 @@ feature 'geolocator' do
     end
 
     scenario 'can click on closest resorts and show current stats' do
+
       click_link 'Eldora'
 
-      expect(page).to hav_css('stats')
+      expect(page).to have_content(1.5)
 
     end
 

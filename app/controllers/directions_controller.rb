@@ -11,8 +11,15 @@ class DirectionsController < ApplicationController
     end
   end
   def show
+    @direction = Direction.find(params[:id])
     resorts = Geolocator.new(@direction.from).distance
     @resorts = Resort.sort_by_distance(resorts)
+
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: {'from': @direction.from, 'direction_id': @direction.id} }
+    end
   end
   private
 
