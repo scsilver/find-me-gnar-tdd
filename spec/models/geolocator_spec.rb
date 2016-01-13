@@ -1,9 +1,10 @@
 require 'rails_helper'
-require 'spec_helper'
+#require 'spec_helper'
 
 
 describe Geolocator do
     before(:example) do
+
       resort = create(:resort,location: "37.8846276,-107.6657078")
       resort2 = create(:resort, name: "resort 2",location: "37.8846276,-108.6657078")
       direction = build(:direction,from: "715 Arapahoe Ave, Boulder Co")
@@ -34,7 +35,6 @@ describe Geolocator do
     describe "public instance methods" do
       context "responds to its methods" do
 
-        it { expect(Geolocator).to respond_to(:new) }
         it { expect(@geolocator).to respond_to(:json) }
         it { expect(@geolocator).to respond_to(:distance) }
         it { expect(@geolocator).to respond_to(:from_param) }
@@ -49,7 +49,7 @@ describe Geolocator do
             geolocator = Geolocator.new(direction.from)
 
             expect(geolocator.from).to eq(direction.from)
-            expect(geolocator.api_key).to eq('AIzaSyBb3ZSbRxq6PQSsJmpTT9bR79HghrI9_LE')
+            expect(geolocator.api_key).to eq(ENV["GEO_API_KEY"])
 
           end
         end

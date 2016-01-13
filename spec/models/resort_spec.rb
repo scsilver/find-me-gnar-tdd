@@ -5,6 +5,7 @@ describe Resort do
   it "has a valid factory" do
 
     expect(build(:resort)).to be_valid
+    
   end
 
   let(:direction) { build(:direction) }

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-12T22:34:33-07:00">2016-01-12T22:34:33-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-13T00:48:20-07:00">2016-01-13T00:48:20-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.67
+         5.65
        </span>
     </span> hits/line)
   </h2>
@@ -143,11 +143,11 @@
       <tr>
         <td class="strong"><a href="#2abb5af65ca96cb1ccbd1d26e9744ebd117b2203" class="src_link" title="app/models/geolocator.rb">app/models/geolocator.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>43</td>
+        <td>42</td>
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>10.7</td>
+        <td>10.6</td>
       </tr>
       
       <tr>
@@ -260,7 +260,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         8.31
+         8.26
        </span>
     </span> hits/line)
   </h2>
@@ -298,11 +298,11 @@
       <tr>
         <td class="strong"><a href="#2abb5af65ca96cb1ccbd1d26e9744ebd117b2203" class="src_link" title="app/models/geolocator.rb">app/models/geolocator.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>43</td>
+        <td>42</td>
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>10.7</td>
+        <td>10.6</td>
       </tr>
       
       <tr>
@@ -1171,229 +1171,223 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="6">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="27" data-linenumber="6">
+          <span class="hits">27</span>
           
           <code class="ruby">    self.from = from</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="7">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="27" data-linenumber="7">
+          <span class="hits">27</span>
           
-          <code class="ruby">    self.api_key = \</code>
+          <code class="ruby">    self.api_key = ENV[&quot;GEO_API_KEY&quot;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">      &#39;AIzaSyBb3ZSbRxq6PQSsJmpTT9bR79HghrI9_LE&#39;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def json</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="14">
+        <li class="covered" data-hits="14" data-linenumber="13">
           <span class="hits">14</span>
           
           <code class="ruby">    url = &quot;https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{from_param}&amp;destinations=#{destination_param}&amp;key=#{api_key}&amp;units=imperial&quot;</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="15">
+        <li class="covered" data-hits="14" data-linenumber="14">
           <span class="hits">14</span>
           
           <code class="ruby">    self.distance_from = HTTParty.get url</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  def distance</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="20">
+        <li class="covered" data-hits="11" data-linenumber="19">
           <span class="hits">11</span>
           
           <code class="ruby">    json</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="21">
+        <li class="covered" data-hits="11" data-linenumber="20">
           <span class="hits">11</span>
           
           <code class="ruby">    resorts.each_with_index do |resort, i|</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="22">
+        <li class="covered" data-hits="22" data-linenumber="21">
           <span class="hits">22</span>
           
           <code class="ruby">      resort.add_distance(distance_from[&#39;rows&#39;][0][&#39;elements&#39;][i])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">  def from_param</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="29">
+        <li class="covered" data-hits="15" data-linenumber="28">
           <span class="hits">15</span>
           
           <code class="ruby">    CGI.escape from</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def resorts</code>
         </li>
       
-        <li class="covered" data-hits="27" data-linenumber="34">
+        <li class="covered" data-hits="27" data-linenumber="33">
           <span class="hits">27</span>
           
           <code class="ruby">    Resort.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
           <code class="ruby">  def destination_param</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="39">
+        <li class="covered" data-hits="15" data-linenumber="38">
           <span class="hits">15</span>
           
           <code class="ruby">    CGI.escape resorts.map(&amp;:location).join(&#39;|&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">end</code>

@@ -1,5 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe Tweet, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Tweet do
+  it "has a valid factory" do
+
+    expect(build(:tweet)).to be_valid
+
+  end
+
+  let(:tweet) { build(:tweet) }
+
+  describe "ActiveRecord associations" do
+    # Associations
+    it { expect(tweet).to belong_to(:resort) }
+
+  end
 end

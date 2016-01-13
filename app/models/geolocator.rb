@@ -4,8 +4,7 @@ class Geolocator
   def initialize(from)
 
     self.from = from
-    self.api_key = \
-      'AIzaSyBb3ZSbRxq6PQSsJmpTT9bR79HghrI9_LE'
+    self.api_key = ENV["GEO_API_KEY"]
 
   end
 

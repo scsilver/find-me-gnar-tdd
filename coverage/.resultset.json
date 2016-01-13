@@ -98,15 +98,19 @@
         null,
         null
       ],
+      "/Users/scott/Documents/code/find_me_snow_tdd/app/models/tweet.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/scott/Documents/code/find_me_snow_tdd/app/models/geolocator.rb": [
         1,
         1,
         null,
         1,
         null,
-        28,
-        28,
-        null,
+        27,
+        27,
         null,
         null,
         null,
@@ -164,13 +168,8 @@
         null,
         null,
         null
-      ],
-      "/Users/scott/Documents/code/find_me_snow_tdd/app/models/tweet.rb": [
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1452663273
+    "timestamp": 1452671300
   }
 }
