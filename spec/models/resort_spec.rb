@@ -5,7 +5,6 @@ describe Resort do
   it "has a valid factory" do
 
     expect(build(:resort)).to be_valid
-
   end
 
   let(:direction) { build(:direction) }
@@ -71,7 +70,7 @@ describe Resort do
             "status"=>"ZERO_RESULTS"})
 
           expect(resort.distance_text).to include('No Result')
-          expect(resort.distance_value).to eq(100000000000)
+          expect(resort.distance_value).to eq(1000000000)
         end
 
       end
