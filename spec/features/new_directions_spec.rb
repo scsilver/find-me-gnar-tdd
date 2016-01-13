@@ -48,7 +48,7 @@ feature 'geolocator' do
     scenario 'can click on closest resorts and show instagram photos' do
       click_link 'Eldora'
 
-      expect(page).to have_css("img[src*='scontent']")
+      expect(page).to have_content("img[src*='scontent']")
 
     end
 
