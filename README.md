@@ -1,19 +1,19 @@
-###Find Me Gnar
+#Find Me Gnar
 A site that makes it easy for user to find closest colorado ski resorts, compare
 recent snowfall, base and other stats, and see relevant realtime information about each resort.
 
 ##Data Sources
-#Real Time Crowd Sourced data
+###Real Time Crowd Sourced data
 -Resort Relevant tweets (Twitter Api)
 -Resort Relevant photos (Instagram Api)
-#Continuously updating data
+###Continuously updating data
 -Road conditions for directions to resort (CDOT)
 -Road cams for roads listed in directions to resort (CDOT)
-#Daily Data
+###Daily Data
 -Resorts Snowfall and Base stats (From each resorts site)
 -Resorts temperature stats (Wunderground Api)
 
-#TODO
+##TODO
 -obtain data feeds from CDOT
 -functions to find roadcams and roads along way to resort with
   -path from google maps api includes geo coordinates
